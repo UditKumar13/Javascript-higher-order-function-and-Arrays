@@ -147,6 +147,13 @@ const sortedCompanies2 = companies.sort((a,b)=>(a.start>b.start)? 1:-1);
 console.log("sorted companies acc to start data");
 console.log(sortedCompanies2);
 
+// sort ages
+const sortAges = ages.sort((a,b)=> a-b);
+console.log("sorted ages ");
+console.log(sortAges);
+
+// if want in descending order use (a,b) => b-a
+
 
 
 
