@@ -14,7 +14,7 @@ const companies= [
   
   const ages = [33, 12, 20, 16, 5, 54, 21, 44, 61, 13, 15, 45, 25, 64, 32];
   // standard for loop
-  /*
+
   for ( let i=0 ; i<companies.length;i++){
       console.log(i);
       console.log(companies[i]);
@@ -30,7 +30,7 @@ const companies= [
   // ############  Filter ############# :
 
  // 1.by simple for loop 
-  /*let canDrink = [];
+  let canDrink = [];
   
   for (let i=0;i<ages.length;i++){
       if (ages[i] >=21) {
@@ -40,12 +40,12 @@ const companies= [
   
 // 2. By using the filter 
 
-const canDrink = ages.filter(function(age){
+const canDrink2 = ages.filter(function(age){
    if (age >=21){
        return true;
    }
 })
-  console.log(canDrink);
+  console.log(canDrink2);
 
 // works with the arrow function es6 
 const manDrink = ages.filter(age=> age>=21);
@@ -141,7 +141,7 @@ return -1;
 
 console.log("sorted companies acc to start data");
 console.log(sortedCompanies);
-*/
+
 //using es6 
 const sortedCompanies2 = companies.sort((a,b)=>(a.start>b.start)? 1:-1);
 console.log("sorted companies acc to start data");
@@ -156,5 +156,37 @@ console.log(sortAges);
 
 
 
+
+//// ############ Reduce ###########
+
+// e.g.1
+
+// sum of all ages 
+
+const sumAges = ages.reduce(function(total , age){
+return total + age ; 
+},0);
+
+console.log("age's sum");
+console.log(sumAges);
+
+// with arrow functions
+
+const sumAges2 = ages.reduce((total,age)=>total+ age,0);
+
+console.log("with arrow functions sumAges");
+
+console.log(sumAges2);
+
+// total years of the companies 
+
+const sumTotalyears = companies.reduce((total,company)=>
+total + (company.end - company.start)
+,0);
+
+console.log("companies total years");
+
+console.log(sumTotalyears);
+ 
 
 
