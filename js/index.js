@@ -25,9 +25,9 @@ const companies= [
       console.log(company.name);
   });
 
-  */
+  
 
-  // filter :
+  // ############  Filter ############# :
 
  // 1.by simple for loop 
   /*let canDrink = [];
@@ -37,7 +37,7 @@ const companies= [
           canDrink.push(ages[i]); 
       }
   } 
-  */
+  
 // 2. By using the filter 
 
 const canDrink = ages.filter(function(age){
@@ -84,6 +84,7 @@ console.log(eightyCompanies);
 // can create new arrays of whatever u want from a current array
 
 //e.g.1
+
 const companyNames = companies.map(function(company){
     return company.name;
 })
@@ -98,5 +99,55 @@ const testMap = companies.map(function(company){
 
 console.log("company name and years ")
 console.log(testMap)
+
+
+
+//e.g 3 using arrow function 
+const testMap2 = companies.map(
+    company=>`${company.name} [${company.start} - ${company.end}]`
+);
+
+console.log("company name and years ");
+console.log(testMap2);
+
+// eg.4
+const ageMulby2 = ages.map(age=>age*2);
+console.log("ages mul by 2");
+console.log(ageMulby2);
+
+
+
+//e.g 5
+// using 2 maps consecutively one after the other 
+const twoMap = ages.map(age=>age*2)
+.map(age=>Math.sqrt(age));
+// it first double all numbers and then it gives their square roots
+console.log("calling maps 2 times");
+console.log(twoMap);
+ 
+
+
+// ######  Sort ######
+
+const sortedCompanies = companies.sort(function(c1,c2){
+if (c1.start > c2.start){
+    return 1;
+}
+
+else{
+return -1;
+}
+});
+
+console.log("sorted companies acc to start data");
+console.log(sortedCompanies);
+*/
+//using es6 
+const sortedCompanies2 = companies.sort((a,b)=>(a.start>b.start)? 1:-1);
+console.log("sorted companies acc to start data");
+console.log(sortedCompanies2);
+
+
+
 
 
