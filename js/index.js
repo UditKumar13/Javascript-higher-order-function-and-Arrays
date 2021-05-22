@@ -61,10 +61,42 @@ if (company.category === 'Retail'){
 });
 
 console.log("Retailed companies");
-console.log(retailCompanies)
-  
+console.log(retailCompanies);
 
+//using es6 arrow functions 
+const retailCompanies2 = companies.filter((company)=>company.category==='Retail');
+console.log("Retailed companies 2 again");
+console.log(retailCompanies2);
 
+// filter 80s companies 
 
+const eightyCompanies = companies.filter(function(company){
+if (company.start <1990 && company.start>=1980){
+    return true;
+}
+})
+
+console.log("80s companies");
+
+console.log(eightyCompanies);
+
+// Map 
+// can create new arrays of whatever u want from a current array
+
+//e.g.1
+const companyNames = companies.map(function(company){
+    return company.name;
+})
+console.log("comapny Names");
+console.log(companyNames);
+
+//e.g .2 
+const testMap = companies.map(function(company){
+    return `${company.name} [${company.start} - ${company.end}]`
+
+});
+
+console.log("company name and years ")
+console.log(testMap)
 
 
